@@ -1,0 +1,18 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.skeleton{
+    height: 100vh;
+    width:100vw;
+    background-color: blueviolet;
+}
+.upper{
+    width: 100vw;
+    height:3cm;
+    border:1px solid #fff;
+}
+body{
+    background-color: rgb(46, 5, 85);
+}
