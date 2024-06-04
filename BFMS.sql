@@ -94,7 +94,6 @@ CREATE TABLE `history_log1` (
 
 INSERT INTO `history_log1` (
 
-
 );
 
 -- --------------------------------------------------------
