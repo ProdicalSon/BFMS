@@ -108,7 +108,7 @@ CREATE TABLE `login_user` (
   `username` text NOT NULL,
   `email_address` text NOT NULL,
   `password` text NOT NULL,
-  `user_status` varchar(50) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
