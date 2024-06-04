@@ -28,7 +28,7 @@ SET time_zone = "+03:00";
 --
 
 CREATE TABLE `admin_login` (
-  `id` int(11) NOT NULL,
+  `id_number` int(11) NOT NULL,
   `name` text NOT NULL,
   `admin_user` text NOT NULL,
   `admin_password` text NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `admin_login` (
 -- Dumping data for table `admin_login`
 --
 
-INSERT INTO `admin_login` (`id`, `name`, `admin_user`, `admin_password`, `admin_status`) VALUES
+INSERT INTO `admin_login` (`id_number`, `name`, `admin_user`, `admin_password`, `admin_status`) VALUES
 (
 
 );
@@ -52,7 +52,7 @@ INSERT INTO `admin_login` (`id`, `name`, `admin_user`, `admin_password`, `admin_
 
 CREATE TABLE `history_log` (
   `log_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL,
+  `id_number` int(11) NOT NULL,
   `email_address` text NOT NULL,
   `action` varchar(100) NOT NULL,
   `actions` varchar(200) NOT NULL DEFAULT 'Has LoggedOut the system at',
@@ -78,7 +78,7 @@ INSERT INTO `history_log` (
 
 CREATE TABLE `history_log1` (
   `log_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL,
+  `id_number` int(11) NOT NULL,
   `admin_user` text NOT NULL,
   `action` varchar(100) NOT NULL,
   `actions` varchar(200) NOT NULL DEFAULT 'Has LoggedOut the system at',
@@ -116,7 +116,7 @@ CREATE TABLE `login_user` (
 --
 
 CREATE TABLE `upload_files` (
-  `ID` int(11) NOT NULL,
+  `id_number` int(11) NOT NULL,
   `NAME` varchar(200) NOT NULL,
   `SIZE` varchar(200) NOT NULL,
   `DOWNLOAD` varchar(200) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE `upload_files` (
 -- Dumping data for table `upload_files`
 --
 
-INSERT INTO `upload_files` (`ID`, `NAME`, `SIZE`, `DOWNLOAD`, `TIMERS`, `ADMIN_STATUS`, `EMAIL`) VALUES
+INSERT INTO `upload_files` (`id_number`, `NAME`, `SIZE`, `DOWNLOAD`, `TIMERS`, `ADMIN_STATUS`, `EMAIL`) VALUES
 (
 
 );
@@ -142,7 +142,7 @@ INSERT INTO `upload_files` (`ID`, `NAME`, `SIZE`, `DOWNLOAD`, `TIMERS`, `ADMIN_S
 -- Indexes for table `admin_login`
 --
 ALTER TABLE `admin_login`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_number`);
 
 --
 -- Indexes for table `login_user`
@@ -154,7 +154,7 @@ ALTER TABLE `login_user`
 -- Indexes for table `upload_files`
 --
 ALTER TABLE `upload_files`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id_number`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -164,19 +164,19 @@ ALTER TABLE `upload_files`
 -- AUTO_INCREMENT for table `admin_login`
 --
 ALTER TABLE `admin_login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `login_user`
 --
 ALTER TABLE `login_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `upload_files`
 --
 ALTER TABLE `upload_files`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
