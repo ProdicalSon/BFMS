@@ -1,0 +1,33 @@
+.upper{
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    gap:10px;
+    color: white;
+}
+.back{
+    background-color: rgb(44, 138, 219);
+    padding:10px;
+    /* border:1px solid;
+    min-height:2cm; */
+}
+.title{
+    border:1px solid;
+    min-height:2cm;
+}
+.greetings{
+    border:1px solid;
+    min-height:2cm;
+}
+.iconElements{
+    display: flex;
+    flex-wrap: wrap;
+    border:1px solid;
+    min-height:2cm;
+}
+.iconElements img{
+    border: 1px solid white;
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+}

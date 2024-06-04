@@ -11,7 +11,7 @@
 }
 .upper{
     /* width: 100vw; */
-    height:10vh;
+    min-height:10vh;
     /* border:1px solid #f8fc04; */
     /* padding:10px;
     margin: 10px; */
