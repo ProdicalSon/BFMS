@@ -58,16 +58,16 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
+            width: 60%;
             max-width: 400px;
             margin-top: 60px;
             margin-left: 480px;
-            font-weight: 1000;
+            font-weight: 700;
         }
         .login-form h2 {
             margin-bottom: 20px;
             text-align: center;
-            color: #333;
+            color: #3333;
         }
         .login-form label {
             display: block;
@@ -79,12 +79,12 @@
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #cccc;
             border-radius: 4px;
             box-sizing: border-box;
         }
         .login-form button {
-            width: 100%;
+            width: 30%;
             padding: 12px;
             border: none;
             border-radius: 4px;
@@ -99,18 +99,28 @@
         }
         .login-form .forgot-password {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         .login-form .forgot-password a {
             color: #4CAF50;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
         }
         .login-form .forgot-password a:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
         .login-form img{
             margin-top: -20px;
+        }
+        .login-form .register-here
+        {
+            text-align: center;
+            margin-top: -15px;
+        }
+        .login-form .register-here a{
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 12px;
         }
 
     </style>
@@ -135,12 +145,18 @@
                 <input type="password" id="password" name="password" required>
                 
                 <button type="submit">Login</button>
-                <a href="">Forgot Password</a>
-                <br>
-                <p>Or</p>
-                <br>
-                <button type="submit" >Register Now</button>
-            </form>
+                
+                <div class="forgot-password">
+                    <a href="">Forgot Password</a>
+                    
+                </div>
+                    <br>
+                    <div class="register-here">
+                        <a href="user_register.html">Don't have account? Register Here!!</a>
+                    </div>
+                    
+              
+               
         
         
 
