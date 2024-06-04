@@ -105,7 +105,6 @@ INSERT INTO `history_log1` (
 CREATE TABLE `login_user` (
   `id_number` int(11) NOT NULL,
   `username` text NOT NULL,
-  `email_address` text NOT NULL,
   `password` text NOT NULL,
   
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -149,7 +148,7 @@ ALTER TABLE `admin_login`
 -- Indexes for table `login_user`
 --
 ALTER TABLE `login_user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_number`);
 
 --
 -- Indexes for table `upload_files`
