@@ -1,11 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Management System</title>
+    <title>BFMS Homepage</title>
+    <style>
+    	body, html {
+    		margin: 0;
+    		padding: 0;
+    		height: 100%;
+    		font-family: arial, sans-serif;
+    	}
+    	.container {
+    		background-color: rgb(85, 5, 54);
+    		color: white;
+    		height: 100%;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		justify-content: center;
+    		text-align: center;
+    	}
+    	header h1 {
+    		margin-bottom: 20px;
+    	}
+    	#main-content {
+    		width: 80px;
+    		max-width: 800px;
+    	}
+    	#get-started {
+    		padding: 10px 20px;
+    		font-size: 18px;
+    		background-color: white;
+    		color: rgb(85, 5, 54);
+    		border: none;
+    		border-radius: 20px;
+    		cursor: pointer;
+    		margin-bottom: 20px;
+    		transition: background-color 0.3s ease, color 0.3s ease;
+    	}
+    	#get-started: hover {
+    		background-color: rgb(200, 200, 200);
+    		border-radius: 20px;
+    	}
+    	#file-management {
+    		padding: 20px;
+    		background-color: rgba(255, 255, 255, 0.8);
+    		color: rgb(85, 5, 54);
+    		border-radius: 20px;
+    		margin-bottom: 20px;
+    		font-size: 20px;
+    	}
+    	#empty-div {
+    		height: 100px;
+    		background-color: white;
+    		border-radius: 20px;
+    		rotate: +30deg;
+    	}
+    </style>
 </head>
 <body>
-    
+<div class="container">
+	<header>
+		<h1>WELCOME TO BFMS FILING SYSTEM</h1>
+	</header>
+	<section id="main content">
+		<button id="get started">Get Started</button>
+		<div id="file-management">File Management</div>
+		<div id="empty-div"></div>
+	</section>
+</div>
+<script>
+	document.getElementById('get-started').addEventListener('click', () => {
+		alert('get started button clicked!');
+	});
+</script>
 </body>
 </html>
