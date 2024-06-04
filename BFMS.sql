@@ -104,10 +104,10 @@ INSERT INTO `history_log1` (
 --
 
 CREATE TABLE `login_user` (
-  `id` int(11) NOT NULL,
-  `name` text NOT NULL,
+  `id_number` int(11) NOT NULL,
+  `username` text NOT NULL,
   `email_address` text NOT NULL,
-  `user_password` text NOT NULL,
+  `password` text NOT NULL,
   `user_status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
