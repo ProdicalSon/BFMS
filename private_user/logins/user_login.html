@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>User Login</title>
     <link rel="stylesheet" href="user_login.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
     <style>
@@ -44,14 +45,35 @@
             border-radius: 2px;
         }
         .header{
-            /*background-color: #f1f1f1;*/
+           /* background-color: #ade909;*/
             cursor: pointer;
-            margin-top: 25px;
-            margin-right: 700px;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .header h1{
             color: white;
             
+        }
+        .header i{
+            font-size: 40px;
+            margin-top: 10px;
+            font-size: 50px;
+           
+        }
+        .material-icons{
+            margin-left: -530px;
+            color: white;
+            display: inline-block;
+            padding: 5px;
+            border: 2px solid #f8f5f5;
+            border-radius: 10px;
+            text-align: center;
+            background-color: none;
+            margin-right: 60px;
+            
+           
         }
         .login-form {
             background-color: #ffffff;
@@ -128,12 +150,13 @@
 <body>
     <div class="container">
        <div class="header">
-        <h1><box-icon name='left-arrow-circle'></box-icon>Bungoma County Filling System</h1>
+        <i class="material-icons">chevron_left</i>
+        <h1>Bungoma County Filling System</h1>
        </div>
         
 
             <form class="login-form">
-                <img src="..\private_user\layout\img\layout_img\bgm_county_logo-r.png" alt="logo_left" srcset="" style="height: 3cm; width: 3cm;">
+                <img src="..\layout\img\layout_img\bgm_county_logo-r.png" alt="logo_left" srcset="" style="height: 3cm; width: 3cm;">
                 <a href="">Log In</a>
                 <label for="id_number">ID_Number</label>
                 <input type="text" id="id_number" name="id_number" required>
