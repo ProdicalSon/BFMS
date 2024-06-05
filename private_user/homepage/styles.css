@@ -1,0 +1,119 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(85, 5, 54);
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.upload-box {
+    background-color: #700048;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.upload-area {
+    border: 2px dashed white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.upload-area p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.upload-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.file-list {
+    margin-bottom: 20px;
+}
+
+.file-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #600040;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+}
+
+.file-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.file-name {
+    flex-grow: 1;
+}
+
+.file-status {
+    margin-left: auto;
+}
+
+.file-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.progress-bar {
+    background-color: #800060;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+    height: 5px;
+}
+
+.progress {
+    background-color: white;
+    width: 50%; 
+    height: 100%;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #900070;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}

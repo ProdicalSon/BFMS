@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: rgb(85, 5, 54);
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    backdrop-filter: blur;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4c0042;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+header .logo {
+    height: 50px;
+}
+
+header .login-btn {
+    padding: 10px 20px;
+    background-color: #800060;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#main-content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.left-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-box {
+    rotate: +0deg;
+    width: 80%;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+}
+.inside-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.right-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#get-started {
+    padding: 10px 20px;
+    background-color: #800060;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#get-started:hover {
+    background-color: #a00080;
+}
