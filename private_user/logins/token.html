@@ -31,6 +31,8 @@
     background-color: rgb(119, 7, 73);
     padding: 10px;
     height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .sub-container
 {
@@ -51,7 +53,7 @@
         <div class="sub-container">
 
             <form class="token-form" onsubmit="return validateToken()">
-                        <label for="token">Enter Token:</label><br>
+                        <label for="token">Enter Token</label><br>
                         <input type="text" id="digit1" class="token-input" maxlength="1" pattern="\d" required>
                         <input type="text" id="digit2" class="token-input" maxlength="1" pattern="\d" required>
                         <input type="text" id="digit3" class="token-input" maxlength="1" pattern="\d" required>
