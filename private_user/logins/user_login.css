@@ -83,6 +83,10 @@ a {
     margin-left: 480px;
     font-weight: 700;
 }
+.register-anchor a{
+    color: rgb(108, 108, 233);
+    font-size: 15px;
+}
 .login-form {
     background-color: #ffffff;
     padding: 30px;
