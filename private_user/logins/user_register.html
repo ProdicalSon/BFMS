@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="components.css">
 <style>
-
+    body{
+        background-color: rgb(119, 7, 73);
+    }
+.container{
+    text-align: center;
+    background-color: white;
+    width: 80%;
+    height: 90vh;
+    margin-top: 20px;
+    border-radius: 8px;
+    margin-left: 90px;
+}
 #content {
             margin-top: 20px;
             
@@ -25,6 +36,15 @@
             background-color: #007bff;
             border: none;
             border-radius: 5px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .register-form {
+            display: flex;
+            flex-direction: column;
         }
 </style>
    
@@ -59,7 +79,7 @@
                     <input type="text" id="employee_number" name="employee_number" required>
                     
                     <label for="employee_number">Department_Description</label>
-                    <textarea id="department_description" name="department_description" rows="2" cols="30"></textarea><br>
+                    <textarea id="department_description" name="department_description" rows="2" cols="18"></textarea><br>
 
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
