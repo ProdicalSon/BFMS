@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="user_login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token</title>
+
+
+    <style>
+        .token-input {
+            width: 30px;
+            text-align: center;
+            font-size: 18px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="token-form" onsubmit="return validateToken()">
+            <label for="token">Enter Token:</label><br>
+            <input type="text" id="digit1" class="token-input" maxlength="1" pattern="\d" required>
+            <input type="text" id="digit2" class="token-input" maxlength="1" pattern="\d" required>
+            <input type="text" id="digit3" class="token-input" maxlength="1" pattern="\d" required>
+            <input type="text" id="digit4" class="token-input" maxlength="1" pattern="\d" required>
+            <input type="text" id="digit5" class="token-input" maxlength="1" pattern="\d" required>
+            <input type="text" id="digit6" class="token-input" maxlength="1" pattern="\d" required><br>
+            <input type="submit" value="Submit">
+        </form>
+    
+        <script>
+            const inputs = document.querySelectorAll('.token-input');
+    
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', () => {
+                    if (input.value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+    
+                input.addEventListener('keydown', (event) => {
+                    if (event.key === 'Backspace' && input.value.length === 0 && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+    
+            function validateToken() {
+                let token = '';
+                inputs.forEach(input => {
+                    token += input.value;
+                });
+    
+                if (token.length === 6 && /^\d{6}$/.test(token)) {
+                    // Token is valid
+                    return true;
+                } else {
+                    alert('Please enter exactly 6 digits.');
+                    return false;
+                }
+            }
+        </script>
+   
+    </div>
+</body>
+</html>
