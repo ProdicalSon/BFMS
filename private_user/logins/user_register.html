@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="components.css">
+<style>
 
+#content {
+            margin-top: 20px;
+        }
+</style>
    
 </head>
 <body>
@@ -49,11 +54,22 @@
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
 
-                    <button type="button" onclick="window.location.href='token.html'">Register</button>
-
-
-
+                    <button type="button" class="button" onclick="loadContent()">Register</button>
+                    <div id="content"></div>
+                
+                    <script>
+                        function loadContent() {
+                            fetch('token.html')
+                                .then(response => response.text())
+                                .then(data => {
+                                    document.getElementById('content').innerHTML = data;
+                                })
+                                .catch(error => console.error('Error loading content:', error));
+                        }
+                    </script>
                 </form>
+
+               
                     
               
                
