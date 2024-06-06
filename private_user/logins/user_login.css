@@ -71,6 +71,18 @@ a {
     
    
 }
+.register-form
+{
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    max-width: 350px;
+    margin-top: 60px;
+    margin-left: 480px;
+    font-weight: 700;
+}
 .login-form {
     background-color: #ffffff;
     padding: 30px;

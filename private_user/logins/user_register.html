@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>User Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="user_login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -21,7 +21,10 @@
         
        </div>
         
-                <form>
+                <form class="register-form">
+                    <img src="..\layout\img\layout_img\bgm_county_logo-r.png" alt="logo_left" srcset="" style="height: 3cm; width: 3cm;">
+
+                <div class="login-anchor"><a href="">Register Now</a></div>
                     <label for="firstname">Firstname</label>
                     <input type="text" id="firstname" name="firstname" required>
 
@@ -42,6 +45,8 @@
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
+
+                    <button type="submit">Request Token</button>
 
                 </form>
                     
