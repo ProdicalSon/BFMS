@@ -196,7 +196,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     //prepared_statements
     $sql = "INSERT INTO user(firstname,lastname,username,id_number,employ_number,email,passwordd) VALUES(?,?,?,?,?,?,?);";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "sssssss", $firstname,$lastname,$username,$id_number,$employ_number,$email,$passwordd);
+    mysqli_stmt_bind_param($stmt, "sssisss", $firstname,$lastname,$username,$id_number,$employ_number,$email,$passwordd);
 
     //execute prepared stements
     if(mysqli_stmt_execute($stmt)){
