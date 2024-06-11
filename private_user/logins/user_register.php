@@ -187,7 +187,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
 
     //check if user is allready registered
-    $get_data = "SELECT * FROM user WHERE email='$email' OR id_number='$id_number' OR passwordd='$passwordd';";
+    $get_data = "SELECT * FROM register WHERE email='$email' OR id_number='$id_number' OR passwordd='$passwordd';";
     $result = mysqli_query($conn,$get_data);
     if($result->num_rows>0){
         echo "<p class='error'>You are already registered! please contact the admin</p>";
