@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,43 +141,63 @@
     
             <label for="employee_number">Employee Number</label>
             <input type="text" id="employee_number" name="employee_number" required>
-            
-            <label for="department_description">Department Description</label>
-            <textarea id="department_description" name="department_description" rows="2" cols="18"></textarea>
-    
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-    
+
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="passwordd" required>
     
             <button type="submit">Register</button>
         </form>
                     <div id="content"></div>
-                
-                    <!-- <script>
-                        type="button" class="button" onclick="loadContent()"
-                        function loadContent() {
-                            fetch('token.html')
-                                .then(response => response.text())
-                                .then(data => {
-                                    document.getElementById('content').innerHTML = data;
-                                })
-                                .catch(error => console.error('Error loading content:', error));
-                        }
-                    </script> -->
-            
-
-               
-                    
-              
-               
-        
-        
-
-
-                  
- 
+       
     <div class="copy">&copy; @2024 ICT Attachees</div>
 </body>
 </html>
+
+<?php 
+// Enable error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+//take form data and use prepared statements
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(isset($_POST['register'])){
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['username'];
+        $id_number = $_POST['id_number'];
+        $employ_number = $_POST['employ_number'];
+        $email = $_POST['email'];
+        $password = $_POST['passwordd'];
+       
+
+           //check if user is allready registered
+    $get_data = "SELECT * FROM user WHERE email='$email' OR id_number='$id_number' OR username='$username';";
+    $result = mysqli_query($conn,$get_data);
+    if($result->num_rows>0){
+        echo "<p class='error'>You are already registered! please contact the admin</p>";
+    }else{
+
+    //prepared_statements
+    $sql = "INSERT INTO user(firstname,lastname,username,id_number,employ_number,email,passwordd) VALUES(?,?,?,?,?,?,?);";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sssssss", $firstname,$lastname,$username,$id_number,$employ_number,$email,$passwordd);
+
+    //execute prepared stements
+    if(mysqli_stmt_execute($stmt)){
+        echo 'User registered successfully';
+    }else{
+        echo "failed to upload data";
+    }
+
+    //close prepared statements and database connection
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+}
+}
+?>
