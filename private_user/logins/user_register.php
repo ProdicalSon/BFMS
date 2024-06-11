@@ -1,6 +1,11 @@
 <?php 
 session_start();
 include ('../../connection.php');
+
+// Enable error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 
 
@@ -149,7 +154,7 @@ include ('../../connection.php');
             <label for="password">Password</label>
             <input type="password" id="password" name="passwordd" required>
     
-            <button type="submit">Register</button>
+            <button type="submit" name="register">Register</button>
         </form>
                     <div id="content"></div>
        
@@ -158,10 +163,7 @@ include ('../../connection.php');
 </html>
 
 <?php 
-// Enable error reporting
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 
 //take form data and use prepared statements
@@ -186,23 +188,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             die("Connection failed: " . $conn->connect_error);
         }
 
-    //check if user is allready registered
-    $get_data = "SELECT * FROM register WHERE email='$email' OR id_number='$id_number' OR passwordd='$passwordd';";
-    $result = mysqli_query($conn,$get_data);
-    if($result->num_rows>0){
-        echo "<p class='error'>You are already registered! please contact the admin</p>";
-    }else{
+// Check if user is already registered
+$get_data = "SELECT * FROM user WHERE email=? OR id_number=? OR username=?";
+$stmt = mysqli_prepare($conn, $get_data);
+mysqli_stmt_bind_param($stmt, 'sss', $email, $id_number, $username);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
-    //prepared_statements
-    $sql = "INSERT INTO register(firstname,lastname,username,id_number,employ_number,email,passwordd) VALUES(?,?,?,?,?,?,?);";
+if ($result->num_rows > 0) {
+    echo "<p class='error'>You are already registered! Please contact the admin</p>";
+} else {
+    // Prepared statements
+    $sql = "INSERT INTO user (firstname, lastname, username, id_number, employee_number, email, passwordd) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "sssisss", $firstname,$lastname,$username,$id_number,$employ_number,$email,$passwordd);
+    mysqli_stmt_bind_param($stmt, "sssisss", $firstname, $lastname, $username, $id_number, $employee_number, $email, $passwordd);
+
 
     //execute prepared stements
     if(mysqli_stmt_execute($stmt)){
         echo 'User registered successfully';
     }else{
-        echo "failed to upload data";
+        echo "Failed to upload data: " . mysqli_error($conn);
     }
 
     //close prepared statements and database connection
