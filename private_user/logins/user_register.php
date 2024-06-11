@@ -123,7 +123,7 @@ include ('../../connection.php');
     
        
         
-        <form class="register-form" method="post" action="registration_handler.php">
+        <form class="register-form" method="post" >
             <div class="register-anchor">
                 <a href="#">Register Now</a>
             </div>
