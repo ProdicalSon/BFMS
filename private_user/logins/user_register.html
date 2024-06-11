@@ -42,10 +42,23 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            /* background-color: red; */
         }
         .register-form {
             display: flex;
+            background-color: white;
+            margin-top: 20px;
+            margin-left: 480px;
             flex-direction: column;
+        }
+        label
+        {
+            color: grey;
+            margin-left: -180px;
+        }
+        input
+        {
+            width: 200px;
         }
 </style>
    
@@ -58,7 +71,7 @@
        
         
         </div>
-    <div class="container">
+    
        
         
                 <form class="register-form">
@@ -89,10 +102,18 @@
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
 
-                    <button type="button" class="button" onclick="loadContent()">Register</button>
+                    <button
+                    style="
+                        border: 2px solid grey;
+                        background-color: green;
+                        font-weight: 600;
+                    "
+
+                    >Register</button>
                     <div id="content"></div>
                 
-                    <script>
+                    <!-- <script>
+                        type="button" class="button" onclick="loadContent()"
                         function loadContent() {
                             fetch('token.html')
                                 .then(response => response.text())
@@ -101,7 +122,7 @@
                                 })
                                 .catch(error => console.error('Error loading content:', error));
                         }
-                    </script>
+                    </script> -->
                 </form>
 
                
@@ -113,7 +134,7 @@
 
 
                   
-    </div>
+ 
     <div class="copy">&copy; @2024 ICT Attachees</div>
 </body>
 </html>
