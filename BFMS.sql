@@ -47,26 +47,25 @@ INSERT INTO `admin_login` (`id_number`, `name`, `admin_user`, `admin_password`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `history_log`
+-- Table structure for table `register`
 --
 
-CREATE TABLE `history_log` (
-  `log_id` int(11) NOT NULL,
-  `id_number` int(11) NOT NULL,
-  `email_address` text NOT NULL,
-  `action` varchar(100) NOT NULL,
-  `actions` varchar(200) NOT NULL DEFAULT 'Has LoggedOut the system at',
-  `ip` text NOT NULL,
-  `host` text NOT NULL,
-  `login_time` varchar(200) NOT NULL,
-  `logout_time` varchar(200) NOT NULL
+CREATE TABLE `register` (
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `id_number` int(10) NOT NULL,
+  `employ_number` varchar(20) NOT NULL,
+  `email` text NOT NULL,
+  `passwordd` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `history_log`
+-- Dumping data for table `register`
 --
 
-INSERT INTO `history_log` (
+INSERT INTO `register` (`firstname`, `lastname`, `username`, `id_number`, `employ_number`, `email`, `passwordd`) VALUES
+(
 
 );
 
