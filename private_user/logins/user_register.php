@@ -174,9 +174,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $employ_number = $_POST['employ_number'];
         $email = $_POST['email'];
         $passwordd = $_POST['passwordd'];
-       
 
-           //check if user is allready registered
+    //Hash password
+        $hashed_password = password_hash($passwordd, PASSWORD_DEFAULT);
+       
+    // Database connection
+        $conn = new mysqli('hostname', 'username', 'password', 'database');
+
+    // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+    //check if user is allready registered
     $get_data = "SELECT * FROM user WHERE email='$email' OR id_number='$id_number' OR passwordd='$passwordd';";
     $result = mysqli_query($conn,$get_data);
     if($result->num_rows>0){
