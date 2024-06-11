@@ -46,21 +46,64 @@
         }
         .register-form {
             display: flex;
-            background-color: white;
-            margin-top: 20px;
-            margin-left: 480px;
             flex-direction: column;
+            max-width: 400px;
+            max-height: auto;
+            margin: 0 auto;
+            padding: 1em;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        label
+        .register-form label {
+            margin-top: 1em;
+            margin-left: -190px;
+            color: white;
+            align-items: center;
+            justify-content: center;
+        }
+        .register-form input
         {
-            color: grey;
-            margin-left: -180px;
+            margin-top: 0.5em;
+            width: 60%;
+            padding: 0.5em;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        input
-        {
-            width: 200px;
+         
+        .register-form textarea {
+            margin-top: 0.5em;        
+            padding: 0.5em;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-</style>
+        .register-form button {
+            margin-top: 1em;
+            padding: 0.7em;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .register-form button:hover {
+            background-color: #0056b3;
+        }
+        .register-anchor {
+            margin-top: 250px;
+            text-align: center;
+        }
+        .register-anchor a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .register-anchor a:hover {
+            text-decoration: none;
+        }
+    </style>
    
 </head>
 <body>
@@ -74,42 +117,37 @@
     
        
         
-                <form class="register-form">
-                   
-
-                <div class="register-anchor"><a href="">Register Now</a></div>
-                    <label for="firstname">Firstname</label>
-                    <input type="text" id="firstname" name="firstname" required>
-
-                    <label for="lastname">Lastname</label>
-                    <input type="text" id="lastname" name="lastname" required>
-                    
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-
-                    <label for="id_number">ID_Number</label>
-                    <input type="text" id="id_number" name="id_number" required>
-
-                    <label for="employee_number">Employee_Number</label>
-                    <input type="text" id="employee_number" name="employee_number" required>
-                    
-                    <label for="employee_number">Department_Description</label>
-                    <textarea id="department_description" name="department_description" rows="2" cols="18"></textarea><br>
-
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <button
-                    style="
-                        border: 2px solid grey;
-                        background-color: green;
-                        font-weight: 600;
-                    "
-
-                    >Register</button>
+        <form class="register-form" method="post" action="registration_handler.php">
+            <div class="register-anchor">
+                <a href="#">Register Now</a>
+            </div>
+    
+            <label for="firstname">Firstname</label>
+            <input type="text" id="firstname" name="firstname" required>
+    
+            <label for="lastname">Lastname</label>
+            <input type="text" id="lastname" name="lastname" required>
+            
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+    
+            <label for="id_number">ID Number</label>
+            <input type="text" id="id_number" name="id_number" required>
+    
+            <label for="employee_number">Employee Number</label>
+            <input type="text" id="employee_number" name="employee_number" required>
+            
+            <label for="department_description">Department Description</label>
+            <textarea id="department_description" name="department_description" rows="2" cols="18"></textarea>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+    
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+    
+            <button type="submit">Register</button>
+        </form>
                     <div id="content"></div>
                 
                     <!-- <script>
@@ -123,7 +161,7 @@
                                 .catch(error => console.error('Error loading content:', error));
                         }
                     </script> -->
-                </form>
+            
 
                
                     
