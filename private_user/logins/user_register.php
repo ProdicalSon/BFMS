@@ -191,7 +191,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 // Check if user is already registered
 $get_data = "SELECT * FROM user WHERE email=? OR id_number=? OR username=?";
 $stmt = mysqli_prepare($conn, $get_data);
-mysqli_stmt_bind_param($stmt, 'sss', $email, $id_number, $username);
+mysqli_stmt_bind_param($stmt, 'sis', $email, $id_number, $username);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
