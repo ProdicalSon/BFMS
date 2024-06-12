@@ -1,0 +1,208 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(85, 5, 54);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+header .back-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #900070;
+    background-color: #ddd;
+}
+
+.user-id {
+    background-color: #900070;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.status-online, .status-active {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.status-online {
+    background-color: green;
+}
+
+.status-active {
+    background-color: gold;
+}
+
+.settings {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.settings h2 {
+    margin-top: 0;
+}
+
+.settings-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.upload-download {
+    display: flex;
+    align-items: center;
+}
+
+.upload-download label {
+    margin-right: 10px;
+}
+
+.user-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-type-value {
+    background-color: #900070;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.action-buttons button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.reset-password {
+    background-color: #007bff;
+}
+
+.upgrade, .downgrade {
+    background-color: #28a745;
+}
+
+.deactivate {
+    background-color: #ffc107;
+}
+
+.delete {
+    background-color: #dc3545;
+}
+
+.user-files, .logs {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.user-files h2, .logs h2 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+button.view, button.delete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+button.view {
+    background-color: #007bff;
+}
+
+button.delete {
+    background-color: #dc3545;
+}

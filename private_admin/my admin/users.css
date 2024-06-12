@@ -1,0 +1,121 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(85, 5, 54);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+header .back-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.add-user, .user-profiles {
+    display: flex;
+}
+
+.add-user-box, .user-profile {
+    border: 2px dashed #900070;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    text-align: center;
+    width: 200px;
+    position: relative;
+}
+
+.add-user-box .add-icon {
+    font-size: 48px;
+    color: #900070;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #900070;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #ddd;
+}
+
+.user-profile p {
+    margin: 5px 0;
+}
+
+.user-profile .view-profile-btn {
+    padding: 10px 20px;
+    background-color: #900070;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.user-table-section {
+    margin-top: 20px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #900070;
+    color: white;
+}
+
+.user-table td .view-profile-btn {
+    padding: 5px 10px;
+    background-color: #900070;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
