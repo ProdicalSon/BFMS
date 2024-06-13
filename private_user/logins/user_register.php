@@ -59,6 +59,7 @@ error_reporting(E_ALL);
             display: flex;
             flex-direction: column;
             max-width: 400px;
+            flex-wrap: wrap;
             max-height: auto;
             margin: 0 auto;
             padding: 1em;
@@ -168,53 +169,41 @@ error_reporting(E_ALL);
 
 //take form data and use prepared statements
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+    date_default_timezone_set("Africa/Nairobi");
+    $date = date("M-d-Y h:i A", strtotime("+0 HOURS"));
+
     if(isset($_POST['register'])){
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $username = $_POST['username'];
-        $id_number = $_POST['id_number'];
-        $employee_number = $_POST['employee_number'];
-        $email = $_POST['email'];
-        $passwordd = $_POST['passwordd'];
+        $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+        $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $id_number = filter_var($_POST['id_number'], FILTER_SANITIZE_NUMBER_INT);
+        $employee_number = mysqli_real_escape_string($conn, $_POST['employee_number']);
+        $email = mysqli_real_escape_string($conn, $_POST["email"]);
+        $passwordd = mysqli_real_escape_string($conn, $_POST["passwordd"]);
+        $hashed_passwordd = password_hash($passwordd, PASSWORD_DEFAULT);
 
-    //Hash password
-        $hashed_password = password_hash($passwordd, PASSWORD_DEFAULT);
-       
-    // // Database connection
-    //     $conn = new mysqli('hostname', 'username', 'password', 'database');
+   // Check if email already exists
+   $query = mysqli_query($conn, "SELECT * FROM register WHERE email = '$email'") or die(mysqli_error($conn));
+   $counter = mysqli_num_rows($query);
 
-    // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
 
-// Check if user is already registered
-$get_data = "SELECT * FROM register WHERE email=? OR id_number=? OR username=?";
-$stmt = mysqli_prepare($conn, $get_data);
-mysqli_stmt_bind_param($stmt, 'sis', $email, $id_number, $username);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-
-if ($result->num_rows > 0) {
-    echo "<p class='error'>You are already registered! Please contact the admin</p>";
+   if ($counter > 0) {
+    echo "<script type='text/javascript'>alert('Email already exists. Please try again with a different email!');
+    document.location='../user_register.html'</script>";
 } else {
-    // Prepared statements
-    $sql = "INSERT INTO register (firstname, lastname, username, id_number, employee_number, email, passwordd) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "sssisss", $firstname, $lastname, $username, $id_number, $employee_number, $email, $passwordd);
+    // Insert new user data into the database
+    $sql = "INSERT INTO register (firstname, lastname, username, id_number, employee_number, email, passwordd) VALUES ('$firstname', '$lastname', '$username', '$id_number', '$employee_number', '$email', '$passwordd')";
 
-
-    //execute prepared stements
-    if(mysqli_stmt_execute($stmt)){
-        echo 'User registered successfully';
-    }else{
-        echo "Failed to upload data: " . mysqli_error($conn);
+    if ($conn->query($sql) === TRUE) {
+        echo "<script type='text/javascript'>alert('Registration successful!');
+        document.location='../user_login.html'</script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    //close prepared statements and database connection
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
 }
+
+$conn->close();
 }
 }
 ?>
