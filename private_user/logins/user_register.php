@@ -55,41 +55,46 @@ error_reporting(E_ALL);
             margin-bottom: 20px;
             /* background-color: red; */
         }
+        .headerA {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: white;
+            margin-top: 10px;
+            border: 8px solid white;
+            
+        }
         .register-form {
+            /* background-color: red; */
             display: flex;
             flex-direction: column;
-            max-width: 400px;
-            flex-wrap: wrap;
+            max-width: 800px;         
+            flex: 1 0 140px;
             max-height: auto;
             margin: 0 auto;
             padding: 1em;
+            font-family: Geist Mono;
             border: 2px solid #ccc;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .register-form label {
             margin-top: 1em;
+            font-family: geist mono;
             margin-left: -190px;
+            margin-right: 400px;
             color: white;
             align-items: center;
             justify-content: center;
         }
         .register-form input
         {
-            margin-top: 0.5em;
-            width: 60%;
+            width: 50%;
             padding: 0.5em;
             font-size: 1em;
             border: 1px solid #ccc;
             border-radius: 4px;
-        }
-         
-        .register-form textarea {
-            margin-top: 0.5em;        
-            padding: 0.5em;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            font-family: geist mono;
         }
         .register-form button {
             margin-top: 1em;
@@ -116,6 +121,7 @@ error_reporting(E_ALL);
             text-decoration: none;
         }
     </style>
+
    
 </head>
 <body>
@@ -126,9 +132,7 @@ error_reporting(E_ALL);
        
         
         </div>
-    
-       
-        
+   
         <form action="" class="register-form" method="post" >
             <div class="register-anchor">
                 <a href="#">Register Now</a>
