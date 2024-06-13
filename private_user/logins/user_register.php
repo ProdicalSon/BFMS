@@ -173,15 +173,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $lastname = $_POST['lastname'];
         $username = $_POST['username'];
         $id_number = $_POST['id_number'];
-        $employ_number = $_POST['employ_number'];
+        $employee_number = $_POST['employee_number'];
         $email = $_POST['email'];
         $passwordd = $_POST['passwordd'];
 
     //Hash password
         $hashed_password = password_hash($passwordd, PASSWORD_DEFAULT);
        
-    // Database connection
-        $conn = new mysqli('hostname', 'username', 'password', 'database');
+    // // Database connection
+    //     $conn = new mysqli('hostname', 'username', 'password', 'database');
 
     // Check connection
         if ($conn->connect_error) {
@@ -189,7 +189,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
 
 // Check if user is already registered
-$get_data = "SELECT * FROM user WHERE email=? OR id_number=? OR username=?";
+$get_data = "SELECT * FROM register WHERE email=? OR id_number=? OR username=?";
 $stmt = mysqli_prepare($conn, $get_data);
 mysqli_stmt_bind_param($stmt, 'sis', $email, $id_number, $username);
 mysqli_stmt_execute($stmt);
@@ -199,7 +199,7 @@ if ($result->num_rows > 0) {
     echo "<p class='error'>You are already registered! Please contact the admin</p>";
 } else {
     // Prepared statements
-    $sql = "INSERT INTO user (firstname, lastname, username, id_number, employee_number, email, passwordd) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO register (firstname, lastname, username, id_number, employee_number, email, passwordd) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "sssisss", $firstname, $lastname, $username, $id_number, $employee_number, $email, $passwordd);
 
