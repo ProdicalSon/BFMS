@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <link rel="stylesheet" href="actions.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn">⬅</button>
+            <h1>Account Settings</h1>
+        </header>
+
+        <div class="content">
+            <div class="user-profile">
+                
+                <div class="profile-header">
+                    <div class="profile-pic"></div>
+                    
+                    <div class="user-id">Hannibal Osore</div>
+                </div>
+                <div class="user-info">
+                    <p><strong>User Name:</strong> Hannibal Osore</p>
+                    <p><strong>User ID:</strong> 39312243</p>
+                    <p><strong>Name:</strong> Hannibal</p>
+                    <p><strong>Department:</strong> ICT</p>
+                    <p><strong>Position:</strong> Head Of Department</p>
+                    <p><strong>Has been a user since:</strong> 13/5/2024</p>
+                    <p><strong>Access Level:</strong> Admin</p>
+                </div>
+                <div class="status">
+                    <span class="status-online">Online</span>
+                    <span class="status-active">Active</span>
+                </div>
+            </div>
+
+            <div class="settings">
+                <h2>Actions and Settings</h2>
+                <div class="settings-options">
+                    <div class="upload-download">
+                        <label>Upload Files</label>
+                        <input type="radio" name="upload" value="yes" checked> Yes
+                        <input type="radio" name="upload" value="no"> No
+                    </div>
+                    <div class="upload-download">
+                        <label>Download Files</label>
+                        <input type="radio" name="download" value="yes" checked> Yes
+                        <input type="radio" name="download" value="no"> No
+                    </div>
+                </div>
+                <div class="user-type">
+                    <label>User Type</label>
+                    <div class="user-type-value">Administrator</div>
+                </div>
+                <div class="action-buttons">
+                    <button class="reset-password">Reset Password</button>
+                    <button class="upgrade">Upgrade</button>
+                    <button class="downgrade">Downgrade</button>
+                    <button class="deactivate">Deactivate User</button>
+                    <button class="delete">Delete User</button>
+                </div>
+            </div>
+
+            <div class="user-files">
+                <h2>User Files</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File ID</th>
+                            <th>File Name</th>
+                            <th>Type</th>
+                            <th>Date Of Upload</th>
+                            <th>Position</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>report</td>
+                            <td>pdf</td>
+                            <td>13/5/2024</td>
+                            <td>Head of Department</td>
+                            <td>
+                                <button class="view">👁</button>
+                                <button class="delete">❌</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>report</td>
+                            <td>pdf</td>
+                            <td>13/5/2024</td>
+                            <td>Deputy of Department</td>
+                            <td>
+                                <button class="view">👁</button>
+                                <button class="delete">❌</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>report</td>
+                            <td>word</td>
+                            <td>13/5/2024</td>
+                            <td>Assistant of Department</td>
+                            <td>
+                                <button class="view">👁</button>
+                                <button class="delete">❌</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="logs">
+                <h2>Logs</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Log ID</th>
+                            <th>Time</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Host IP</th>
+                            <th>Host Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>4:00pm</td>
+                            <td>13/5/2024</td>
+                            <td>active</td>
+                            <td>192.12.2.3</td>
+                            <td>PC 1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>4:00pm</td>
+                            <td>13/5/2024</td>
+                            <td>logged out</td>
+                            <td>192.12.2.3</td>
+                            <td>PC 1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4:00pm</td>
+                            <td>13/5/2024</td>
+                            <td>logged out</td>
+                            <td>192.12.2.3</td>
+                            <td>PC 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
