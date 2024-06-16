@@ -67,4 +67,32 @@ body{
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
     }
+    .right{
+        display: flex;
+        gap:10px;
+        padding:15px;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+    }
+    .r_left{
+        border: 1px solid rgb(231, 129, 12);
+        padding:30px;
+        width:95%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .r_mid{
+        border: 1px solid rgb(63, 140, 170);
+        padding:30px;
+        width:95%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .r_right{
+        border: 1px solid saddlebrown;
+        padding:30px;
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

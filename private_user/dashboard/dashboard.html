@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Layout.css">
-    <link rel="stylesheet" href="components.css">
+    
+    <link rel="stylesheet" href="dashComponents.css">
+    <link rel="stylesheet" href="..\layout\Layout.css">
+    <link rel="stylesheet" href="..\layout\components.css">
+    <!-- <link rel="stylesheet" href="Layout.css"> -->
+    
+    <!-- <link rel="stylesheet" href="components.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="/includes/node_modules/chart.js/dist/chart.umd.js"></script>
+<title>Dashboard</title>
 </head>
 <body>
     <div class="skeleton">
@@ -43,9 +49,113 @@
                 <div class="copy">&copy; @2024 ICT Attachees</div>
             </div>
             <div class="right">
-
+                <div class="r_left">
+                    <div class="userOptions">
+                        <section class="menuOptions" id="view">
+                            <div class="menuOptionIcon"></div>
+                            <div class="menuOptionName"><p>view</p></div>
+                        </section>
+                        <section class="menuOptions" id="upload">
+                            <div class="menuOptionIcon"></div>
+                            <div class="menuOptionName"><p>upload</p></div>
+                        </section>
+                        <section class="menuOptions" id="account">
+                            <div class="menuOptionIcon"></div>
+                            <div class="menuOptionName"><p>account</p></div>
+                        </section>
+                        <section class="menuOptions" id="upload">
+                            <div class="menuOptionIcon"></div>
+                            <div class="menuOptionName"><p>upload</p></div>
+                        </section>
+                    </div>
+                    <div class="message">
+                        <p>
+                        Hello User <br>
+                        Welcome To Bungoma File Management System. 
+                        Explore  the Options on the left  to get started
+                        </p>
+                    </div>
+                </div>
+                <div class="r_mid">
+                    <div class="r_mid_components">
+                        <div class="calender">Calender goes here</div>
+                        <div class="graph">
+                            
+                            <!-- <div class="chart" style="width: 900px; height: 400px; background-color: antiquewhite;"> -->
+        
+                                <canvas class="myChart">
+                        
+                                </canvas>
+                        
+                    </div>
+                    </div>
+                    <div class="table">
+                        <div class="files_tbl">
+                            <h2>Your Files </h2>
+                            <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>fileName</th>
+                                        <th>Sendto</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>example1.txt</td>
+                                        <td>john@example.com</td>
+                                        <td>2024-05-23</td>
+                                        <td>10:00 AM</td>
+                                        <td>Sent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>example1.txt</td>
+                                        <td>john@example.com</td>
+                                        <td>2024-05-23</td>
+                                        <td>10:00 AM</td>
+                                        <td>Pending</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>example1.txt</td>
+                                        <td>john@example.com</td>
+                                        <td>2024-05-23</td>
+                                        <td>10:00 AM</td>
+                                        <td>Canceled</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>example1.txt</td>
+                                        <td>john@example.com</td>
+                                        <td>2024-05-23</td>
+                                        <td>10:00 AM</td>
+                                        <td>Sent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>example1.txt</td>
+                                        <td>john@example.com</td>
+                                        <td>2024-05-23</td>
+                                        <td>10:00 AM</td>
+                                        <td>Sent</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="r_right">
+                    Notifications
+                </div>
             </div>
         </div>
     </div>
+    <script src="/includes/charts/charts.js"></script>
 </body>
+
 </html>
