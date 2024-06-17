@@ -92,7 +92,7 @@
     border-bottom-right-radius: 10px ;
 }
 .r_mid{
-    border-right: 2px solid rgb(134, 122, 122);
+    /* border-right: 2px solid rgb(124, 50, 50); */
     padding:10px;
     width:50%;
     display: flex;
@@ -202,8 +202,9 @@ min-height: 100%;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     gap: 10px;
+    background-color: rgb(255, 255, 255);
 }
 .msgstats{
     padding:5px;
@@ -226,25 +227,29 @@ min-height: 100%;
     padding:10px;
     border-radius: 10px;
     height: 70vh;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     width: 100%;
     display: flex;
     flex-direction: column;
     gap:10px;
     overflow-y: auto;
+   
 }
 .messageContainer{
     cursor: pointer;
+    color: rgb(136, 136, 136);
+    border-bottom: 1px solid rgba(168, 166, 168, 0.644);
+    /* box-shadow:  0 0 2px rgba(34, 33, 33, 0.2); */
     /* border:1px solid black; */
     border-radius: 5px;
-    background-color: #7a7978;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     gap:5px;
     padding:5px;
 }
 .from{
-    box-shadow: 0 2px 3px #fee;
+    box-shadow: 0 5px 7px rgba(31, 1, 21, 0.438);
     padding:5px;
     display: flex;
     font-weight: 600;
