@@ -35,14 +35,27 @@
     justify-content: center;
     min-height:3.5cm;
     min-width: 2.5cm;
-    background-color: rgb(82, 6, 50);;
+    background-color: #009879;
+}
+#view{
+    background-color: #e7810d;
+}
+#upload{
+    background-color: rgb(40, 65, 87);
+}
+#account{
+    background-color: #69625c;
+}
+#notification{
+    background-color: #49062b;
+    font-size: 14px;
 }
 .menuOptionIcon{
     /* border:1px solid orange; */
     height:3cm;
     width:2cm;
-    box-shadow: 1px 2px 6px 1px rgb(255, 255, 255);
-    /* background-color: #e7810d; */
+    /* box-shadow: 1px 2px 6px 1px rgb(153, 150, 150); */
+    background-color: #ffffff;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
@@ -70,7 +83,7 @@
 
 }
 .r_mid_components{
-    border-bottom:1px solid rgba(146, 156, 147, 0.966);
+    border-bottom:3px solid rgba(146, 156, 147, 0.966);
     padding:10px;
     height:40%;
     display:flex;
@@ -84,7 +97,13 @@
 .calender{
 /* border:1px solid forestgreen; */
 box-shadow: 0 1px 1px rgba(145, 137, 145, 0.933);
-padding:10px;
+background-color: #009879;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 5px;
+padding:20px;
 border-radius:5px;
 min-width: 20%;
 min-height: 100%;
@@ -92,6 +111,7 @@ min-height: 100%;
 }
 .graph{
     /* border:1px solid forestgreen; */
+    background-color: #ffffff;
     padding:10px;
     border-radius:5px;
     min-width: 47%;
@@ -156,10 +176,36 @@ min-height: 100%;
 
 .r_right{
     /* border: 1px solid saddlebrown; */
-    padding:30px;
+    padding:10px;
     width: 20%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     border-radius: 5px;
+    gap: 10px;
 }
-
+.msgstats{
+    padding:5px;
+    display: flex;
+    gap:5px;
+}
+.msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #49062b;
+    border-radius: 5px;
+    padding:5px;
+    width:59px;
+}
+.notifications{
+    border: 1px solid;
+    padding:10px;
+    border-radius: 10px;
+    min-height: 70vh;
+    background-color: #ffffff;
+    width: 100%;
+}
