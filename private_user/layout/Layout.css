@@ -7,6 +7,21 @@
 body{
     overflow-y:hidden;
 }
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Background of the draggable scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Background of the scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #390241;
+}
+
 .skeleton{
     min-height: 120vh;
     /* width:100vw; */
