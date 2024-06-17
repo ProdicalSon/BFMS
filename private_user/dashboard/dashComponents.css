@@ -47,41 +47,94 @@
     /* border:1px solid red; */
     border-radius: 5px;
     box-shadow: 0 0 5px 1px rgba(161, 161, 157, 0.933);
-    padding:10px;
+    /* padding:10px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    
     min-height:3.5cm;
     min-width: 2.5cm;
     background-color: #009879;
 }
 #view{
     background-color: #e7810d;
+    background: url("dash_Images/Files.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #upload{
     background-color: rgb(40, 65, 87);
+    background: url("dash_Images/UserAccounts.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #account{
     background-color: #69625c;
+    background: url("dash_Images/Upload.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #notification{
     background-color: #49062b;
-    font-size: 14px;
+    background: url("dash_Images/Statistics.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-.menuOptionIcon{
-    /* border:1px solid orange; */
+/*.menuOptionIcon{
+    /* border:1px solid orange; 
     height:3cm;
     width:2cm;
-    /* box-shadow: 1px 2px 6px 1px rgb(153, 150, 150); */
+    /* box-shadow: 1px 2px 6px 1px rgb(153, 150, 150); 
     background-color: #ffffff;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-}
+} */ 
 .menuOptionIcon:hover{
     box-shadow: 2px 2px 6px 1px rgba(255, 255, 255, 0.568);
 }
+.contents{
+    overflow: hidden;
+   }
+   .contents:hover{
+    transition: 0.5s ease-in-out;
+    /* transform: scale(1.05); */
+   }
+   .contents section {
+    font-size: 20px;
+    
+    background-color: #1a1a42a8;
+    border-top:3px solid #fff;
+    padding:0;
+    margin:0;
+    width: 3.2cm;
+    height:3.5cm;
+    transform: translateY(105px);
+    transition:0.4s ease-in-out;
+    
+   }
+   .contents a {
+    text-decoration: none;
+    color:#fff;
+   }
+   .contents   section:hover{
+    transform:translateY(0);
+   }
+   .contents p{
+    font-size: 15px;
+    color:rgb(255, 187, 0);
+   }
+   .contents button{
+  border:none;
+    background-color: #ece7e763;
+    color:black;
+    padding:5px;
+    margin:5px;
+    cursor:pointer;
+    border-radius: 3px;
+   }
 .message{
     margin-top: 30px;
     border-top: 4px solid;
