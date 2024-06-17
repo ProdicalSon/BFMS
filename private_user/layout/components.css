@@ -1,6 +1,7 @@
 .upper{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding:10px;
     gap:10px;
     color: white;
@@ -10,27 +11,32 @@
 } */
 .back{
     /* background-color: rgb(44, 138, 219); */
-    padding:10px;
+    /* padding:10px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
     border-radius: 10px;
     border:1px solid white; 
     /* min-height:2cm;  */
 }
+.back:hover{
+    background-color: #9e0a6d;
+}
 .title{
-    /* border:1px solid; */
-    /* min-height:2cm; */
+    /* border:1px solid;  */
+    font-size: 10px;
 }
 .greetings{
-    border:1px solid;
+    /* border:1px solid; */
     /* min-height:2cm; */
     display: flex;
     align-items: center;
     border-radius: 10px;
     padding-left: 5px;
+    font-size: 10px;
     padding-right: 5px;
 
 }
@@ -46,48 +52,66 @@
     text-align: center;
     border-radius: 50%;
     display: flex;
+    margin-top: 1px;
     justify-content: center;
     align-items: center;
-    height:50px;
+    font-size: 10px;
+    height:30px;
     /* padding:5px; */
-    width:50px;
+    width:30px;
+    cursor: pointer;
 }
 .iconElements .upper_profile{
     border: 2px solid white;
     text-align: center;
     border-radius: 50%;
-    height:50px;
+    height:30px;
     display: flex;
+    margin-top: 1px;
     justify-content: center;
     align-items: center;
     padding:5px;
-    width:50px;
+    width:30px;
+    cursor: pointer;
+}
+.upper_profile:hover{
+    background-color: #9e0a6d;
+}
+.upper_notification:hover{
+    background-color: #9e0a6d;
 }
 .left{
     /* border:1px solid white; */
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap:5px;
     color: #fff;
 
 
 }
 .logo_left{
     /* border:1px solid white; */
-    padding:10px;
+    /* padding:10px; */
     margin: 10px;
-    min-height:3cm;
-    min-width: 3cm;
-    max-height:3.5cm;
-    max-width: 3.5cm;
+    min-height:1cm;
+    min-width: 1cm;
+    max-height:2cm;
+    /* max-width: 4cm; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 .options{
     /* border: 1px solid; */
-    padding: 10px;
+    padding: 5px;
     display: flex;
     gap:10px;
-    background-color: #4b0333;
+    background-color: #200116;
+    cursor: pointer;
+}
+.options:hover{
+    background-color: #910161;
 }
 .icon{
     /* padding:10px; */
@@ -99,6 +123,7 @@
     width: 100%;
     justify-content: center;
     margin-top: 10px;
+    padding:10px;
 }
 .account{
     /* border: var(--border5); */

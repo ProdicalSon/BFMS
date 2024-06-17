@@ -2,16 +2,17 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .skeleton{
     min-height: 100vh;
     /* width:100vw; */
-    background-color: rgb(119, 7, 73);
+    background-color: rgb(82, 6, 50);
 }
 .upper{
     /* width: 100vw; */
-    min-height:10vh;
+    height:6vh;
     /* border:1px solid #f8fc04; */
     /* padding:10px;
     margin: 10px; */
@@ -28,7 +29,7 @@
     align-items: flex-start;
 }
 .left{
-    width: 15%;
+    width: 12%;
     min-height:90vh;
     height: inherit;
     /* border:1px solid #3bc42e; */
@@ -38,11 +39,14 @@
    
 }
 .right{
-    width: 85%;
+    color:#fff;
+    width: 88%;
     min-height:100vh;
     /* border:1px solid #2e31c4; */
-    background-color: #ffffff;
-    border-top-left-radius: 30px;
+    background:url("../layout/img/background/Gradients/Grey2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 10px;
     /* padding:10px;
     margin: 10px; */
     /* border-bottom-left-radius: 30px; */
