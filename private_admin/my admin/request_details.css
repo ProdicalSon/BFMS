@@ -1,0 +1,105 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(85, 5, 54);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+header .back-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.request-info {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.request-details {
+    border: 2px dashed #900070;
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    text-align: left;
+}
+
+.request-details p, .request-details label {
+    margin: 10px 0;
+}
+
+.request-details input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #900070;
+    border-radius: 5px;
+}
+
+.action-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #900070;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tokens-requests-section {
+    margin-top: 20px;
+}
+
+.tokens-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tokens-table th, .tokens-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tokens-table th {
+    background-color: #900070;
+    color: white;
+}
+
+.action-btn.view {
+    background-color: #007BFF;
+}
+
+.action-btn.delete {
+    background-color: #DC3545;
+}

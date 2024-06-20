@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Details</title>
+    <link rel="stylesheet" href="request_details.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn">⬅</button>
+            <h1>Request Details</h1>
+        </header>
+
+        <section class="request-info">
+            <div class="request-details">
+                <p><strong>Request id:</strong> 12A</p>
+                <p><strong>Date Of Request:</strong> 13/5/2024</p>
+                <p><strong>First Name:</strong> Hannibal</p>
+                <p><strong>Time Of Request:</strong> 12:00 PM</p>
+                <p><strong>Last Name:</strong> Osore</p>
+                <p><strong>Email:</strong> hannibal@gmail.com</p>
+                <label for="department">Set Department:</label>
+                <input type="text" id="department" name="department">
+                <label for="user-type">Set User Type:</label>
+                <input type="text" id="user-type" name="user-type">
+                <button class="action-btn verify">Verify Send Email</button>
+                <button class="action-btn deny">Deny</button>
+            </div>
+        </section>
+
+        <section class="tokens-requests-section">
+            <h2>Tokens And Requests</h2>
+            <table class="tokens-table">
+                <thead>
+                    <tr>
+                        <th>Request Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date Of Request</th>
+                        <th>Time Of Request</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12A</td>
+                        <td>Hannibal</td>
+                        <td>Osore</td>
+                        <td>13/5/2024</td>
+                        <td>4:00 PM</td>
+                        <td>Pending</td>
+                        <td>
+                            <button class="action-btn view">👁️</button>
+                            <button class="action-btn delete">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12B</td>
+                        <td>Alvin</td>
+                        <td>Wesley</td>
+                        <td>13/5/2024</td>
+                        <td>4:00 PM</td>
+                        <td>Denied</td>
+                        <td>
+                            <button class="action-btn view">👁️</button>
+                            <button class="action-btn delete">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12C</td>
+                        <td>Eng</td>
+                        <td>John</td>
+                        <td>13/5/2023</td>
+                        <td>4:00 PM</td>
+                        <td>Accepted</td>
+                        <td>
+                            <button class="action-btn view">👁️</button>
+                            <button class="action-btn delete">❌</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
