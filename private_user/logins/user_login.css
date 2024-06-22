@@ -2,6 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: rgb(119, 7, 73);
 }
 .header1{
    display: flex;
