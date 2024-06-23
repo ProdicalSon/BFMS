@@ -22,7 +22,7 @@
        </div>
         
 
-            <form class="login-form">
+            <form class="login-form" method="POST">
                 <img src="..\layout\img\layout_img\bgm_county_logo-r.png" alt="logo_left" srcset="" style="height: 3cm; width: 3cm;">
 
                 <div class="login-anchor"><a href="">Log In</a></div>
@@ -44,7 +44,7 @@
                 </div>
                     <br>
                     <div class="register-here">
-                        <a href="user_register.html">Don't have account? Register Here!!</a>
+                        <a href="user_register.php">Don't have account? Register Here!!</a>
                     </div>
                     
               

@@ -1,6 +1,20 @@
 <?php 
 session_start();
-include ('../../connection.php');
+include ("db.php");
+
+if($_SERVER['REQUEST_METHOD' == "POST"])
+    {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['username'];
+        $id_number = $_POST['id_number'];
+        $employee_number = $_POST['employee_number'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        
+
+
+    }
 
 // Enable error reporting
 ini_set('display_errors', 1);
@@ -80,7 +94,7 @@ error_reporting(E_ALL);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .register-form label {
-            margin-top: 1em;
+            margin-top: 1em; 
             font-family: geist mono;
             margin-left: -190px;
             margin-right: 400px;
@@ -134,7 +148,7 @@ error_reporting(E_ALL);
         
         </div>
    
-        <form action="" class="register-form" method="post" >
+        <form action="" class="register-form" method="POST" >
             <div class="register-anchor">
                 <a href="#">Register Now</a>
             </div>
@@ -160,7 +174,7 @@ error_reporting(E_ALL);
             <label for="password">Password</label>
             <input type="password" id="password" name="passwordd" required>
     
-            <button type="submit" name="register">Register</button>
+            <button type="submit" name="register"><a href="user_login.php">Register</a></button>
         </form>
                     <div id="content"></div>
        
