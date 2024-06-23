@@ -5,7 +5,7 @@ include ("db.php");
 date_default_timezone_set("Africa/Nairobi");
     $date = date("M-d-Y h:i A", strtotime("+0 HOURS"));
 
-if($_SERVER['REQUEST_METHOD' == "POST"])
+if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
@@ -31,10 +31,6 @@ if($_SERVER['REQUEST_METHOD' == "POST"])
 
     }
 
-// // Enable error reporting
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
 ?>
 
 
