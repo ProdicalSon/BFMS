@@ -1,4 +1,8 @@
-<?php  
-    $conn+ mysqli_connect("localhost", "root", "", "register") or die(myslq_error());
+<?php 
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "bfms";
 
+$conn = mysqli_connect($host,$username,$password,$database);
 ?>

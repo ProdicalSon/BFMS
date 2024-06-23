@@ -65,7 +65,7 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`firstname`, `lastname`, `username`, `id_number`, `employ_number`, `email`, `passwordd`) VALUES
-('john', 'brian', 'johnbrian', '39694411', '11449', 'siundubrian65@gmail.com', 'Ruthsirengo123');
+('john', 'brian', 'johnbrian', '39694411', '11449', 'siundubrian65@gmail.com', 'ruthsirengo123');
 
 
 -- --------------------------------------------------------

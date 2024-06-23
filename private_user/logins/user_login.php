@@ -1,3 +1,47 @@
+<?php
+    session_start();
+
+    include("db.php");
+
+    date_default_timezone_set("Africa/Nairobi");
+    $date = date("M-d-Y h:i A", strtotime("+0 HOURS"));
+
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        $username = $_POST['username'];
+        $id_number = $_POST['id_number'];
+        $hash_password = $_POST['passwordd'];
+
+        if(!empty($email) && !empty($passwordd) && !is_numeric($email)){
+            $query = "select * from register where username = '$username' limit 1"; 
+             $result = mysqli_query($conn, $query);
+
+             if($result)
+             {
+                if($result && mysqli_num_rows($result) >0)
+                {
+                    $user_data = mysqli_fetch_assoc($result);
+
+                    if($user_data['passwordd'] == $passwordd)
+                    {
+                        header("location: dashboard.html");
+                        die;
+                    }
+                }
+             }
+             echo "<script type'text/javascript'> alert('Wrong Username or Password')";
+        }
+        else
+        {
+            echo "<script type'text/javascript'> alert('Wrong Username or Password')";
+        }
+    }
+
+        
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +58,7 @@
 <body>
     <div class="container">
        <div class="header">
-        <div class="headerA"> <i class="material-icons">chevron_left</i></div>
+        <!-- <div class="headerA"> <i class="material-icons">chevron_left</i></div> -->
 
         <div class="headerB"><h1>Bungoma County Filling System</h1></div>
        
@@ -27,14 +71,14 @@
 
                 <div class="login-anchor"><a href="">Log In</a></div>
                 
-                <label for="id_number">ID_Number</label>
-                <input type="text" id="id_number" name="id_number" required>
-                
-                <label for="username">Username</label>
+                <label for="username">username</label>
                 <input type="text" id="username" name="username" required>
                 
+                <label for="id_number">id_number</label>
+                <input type="text" id="id_number" name="id_number" required>
+                
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="passwordd" required>
                 
                 <button type="submit">Login</button>
                 

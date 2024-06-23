@@ -2,6 +2,9 @@
 session_start();
 include ("db.php");
 
+date_default_timezone_set("Africa/Nairobi");
+    $date = date("M-d-Y h:i A", strtotime("+0 HOURS"));
+
 if($_SERVER['REQUEST_METHOD' == "POST"])
     {
         $firstname = $_POST['firstname'];
@@ -10,16 +13,28 @@ if($_SERVER['REQUEST_METHOD' == "POST"])
         $id_number = $_POST['id_number'];
         $employee_number = $_POST['employee_number'];
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $hash_password = $_POST['passwordd'];
         
+        if(!empty($email) && !empty($passwordd) && !is_numeric($email)){
+            $query = "insert into register(firstname, lastname, username, id_number, employee_number, email, passwordd) 
+            values('$firstname', '$lastname', '$'username', '$id_number', '$employee_number', '$email', '$passwordd')";
 
+            mysqli_query($conn, $query);
+
+            echo "<script type='text/javascript'> alert('Succefully Register')</script>";
+
+        }
+        else
+        {
+            echo "<script type='text/javascript'> alert('Please enter valid details')</script>";
+        }
 
     }
 
-// Enable error reporting
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// // Enable error reporting
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 ?>
 
 
@@ -174,7 +189,9 @@ error_reporting(E_ALL);
             <label for="password">Password</label>
             <input type="password" id="password" name="passwordd" required>
     
-            <button type="submit" name="register"><a href="user_login.php">Register</a></button>
+            <button type="submit" name="register">
+                <!-- <a href="user_login.php">Register</a> -->
+            </button>
         </form>
                     <div id="content"></div>
        
