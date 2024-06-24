@@ -3,57 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>File Upload</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Upload files</title>
+
+    <style>
+body{
+    margin: 0;
+    padding: 0;
+    background-color: silver;
+           
+}
+.container2 {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(119, 7, 73);
+}
+
+.drop-zone {
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.drop-zone.dragover {
+    background-color: #e9ecef;
+}
+
+.file-input {
+    display: none;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.file-list {
+    margin-top: 20px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.file-item img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.file-item .file-info {
+    flex: 1;
+}
+
+.file-item .file-actions {
+    display: flex;
+    align-items: center;
+}
+
+.file-item .file-actions button {
+    margin-left: 10px;
+}
+
+
+
+    </style>
+
+
 </head>
 <body>
-    <div class="container">
-        <div class="upload-box">
-            <div class="upload-area">
-                <p>Click or drop to add file</p>
-                
-                <button class="upload-button">+</button>
+    <div class="container2 mt-5">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="categorySelect">Select Category:</label>
+                <select class="form-control" id="categorySelect" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="category1">Category 1</option>
+                    <option value="category2">Category 2</option>
+                    <option value="category3">Category 3</option>
+                </select>
             </div>
-            <div class="file-list">
-                <div class="file-item">
-                    <div class="file-info">
-                        <span class="file-icon">📄</span>
-                        <span class="file-name">Document 1.pdf</span>
-                        <span class="file-status">...Uploading</span>
-                    </div>
-                    <div class="file-actions">
-                        <button class="action-button">❌</button>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress"></div>
-                    </div>
-                </div>
-                <div class="file-item">
-                    <div class="file-info">
-                        <span class="file-icon">📄</span>
-                        <span class="file-name">Document 2.pdf</span>
-                    </div>
-                    <div class="file-actions">
-                        <button class="action-button">✏️</button>
-                        <button class="action-button">👁️</button>
-                        <button class="action-button">❌</button>
-                    </div>
-                </div>
-                <div class="file-item">
-                    <div class="file-info">
-                        <span class="file-icon">📄</span>
-                        <span class="file-name">Document 3.jpeg</span>
-                    </div>
-                    <div class="file-actions">
-                        <button class="action-button">✏️</button>
-                        <button class="action-button">👁️</button>
-                        <button class="action-button">❌</button>
+            <div class="form-group">
+                <label for="newCategory">Add New Category:</label>
+                <div class="input-group">
+                    <input type="text" id="newCategory" class="form-control" placeholder="New Category">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-secondary" id="addCategoryBtn">Add</button>
                     </div>
                 </div>
             </div>
-            <button class="submit-button">Submit</button>
-        </div>
+            <div class="form-group">
+                <label for="fileUpload">Upload Files:</label>
+                <div id="dropZone" class="drop-zone">
+                    <p>Drag & Drop your files here or click to upload</p>
+                    <input type="file" id="fileUpload" name="files" class="file-input" multiple>
+                </div>
+                <div id="fileList" class="file-list"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
     </div>
+        <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileUpload');
+    const addCategoryBtn = document.getElementById('addCategoryBtn');
+    const newCategoryInput = document.getElementById('newCategory');
+    const categorySelect = document.getElementById('categorySelect');
+    const fileList = document.getElementById('fileList');
+    let filesArray = [];
+
+    // Prevent default drag behaviors
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, preventDefaults, false);
+        document.body.addEventListener(eventName, preventDefaults, false);
+    });
+
+    // Highlight drop area when item is dragged over it
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => dropZone.classList.add('dragover'), false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => dropZone.classList.remove('dragover'), false);
+    });
+
+    // Handle dropped files
+    dropZone.addEventListener('drop', handleDrop, false);
+    dropZone.addEventListener('click', () => fileInput.click(), false);
+    fileInput.addEventListener('change', handleFiles, false);
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        handleFiles({ target: { files: files } });
+    }
+
+    function handleFiles(e) {
+        const files = e.target.files;
+        for (const file of files) {
+            filesArray.push(file);
+        }
+        updateFileList();
+    }
+
+    function updateFileList() {
+        fileList.innerHTML = '';
+        filesArray.forEach((file, index) => {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+
+            const fileInfo = document.createElement('div');
+            fileInfo.className = 'file-info';
+            fileInfo.textContent = `File: ${file.name}`;
+
+            const fileActions = document.createElement('div');
+            fileActions.className = 'file-actions';
+
+            if (file.type.startsWith('image/')) {
+                const img = document.createElement('img');
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+                fileItem.appendChild(img);
+            }
+
+            const previewButton = document.createElement('button');
+            previewButton.className = 'btn btn-info btn-sm';
+            previewButton.textContent = 'Preview';
+            previewButton.addEventListener('click', () => previewFile(file));
+
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'btn btn-danger btn-sm';
+            deleteButton.textContent = 'Delete';
+            deleteButton.addEventListener('click', () => deleteFile(index));
+
+            fileActions.appendChild(previewButton);
+            fileActions.appendChild(deleteButton);
+
+            fileItem.appendChild(fileInfo);
+            fileItem.appendChild(fileActions);
+            fileList.appendChild(fileItem);
+        });
+    }
+
+    function previewFile(file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            if (file.type.startsWith('image/')) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                const previewWindow = window.open('', '_blank');
+                previewWindow.document.write(img.outerHTML);
+            } else {
+                const previewWindow = window.open('', '_blank');
+                previewWindow.document.write(`<pre>${e.target.result}</pre>`);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    function deleteFile(index) {
+        filesArray.splice(index, 1);
+        updateFileList();
+    }
+
+    // Add new category
+    addCategoryBtn.addEventListener('click', () => {
+        const newCategory = newCategoryInput.value.trim();
+        if (newCategory) {
+            const option = document.createElement('option');
+            option.value = newCategory.toLowerCase().replace(/ /g, '_');
+            option.textContent = newCategory;
+            categorySelect.appendChild(option);
+            categorySelect.value = option.value;
+            newCategoryInput.value = '';
+        } else {
+            alert('Please enter a category name.');
+        }
+    });
+
+    // Handle form submission
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData();
+        const category = categorySelect.value;
+        filesArray.forEach(file => formData.append('files', file));
+
+        if (!category || filesArray.length === 0) {
+            alert('Please select a category and choose files to upload.');
+            return;
+        }
+
+        // Add the selected category to the form data
+        formData.append('category', category);
+
+        // Use fetch to send the form data to the server
+        fetch('/upload', { // Adjust the endpoint URL as needed
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+          .then(data => {
+              console.log(data);
+              alert('Files uploaded successfully.');
+          }).catch(error => {
+              console.error(error);
+              alert('Error uploading files.');
+          });
+    });
+});
+
+
+        </script>
+    
 </body>
 </html>
