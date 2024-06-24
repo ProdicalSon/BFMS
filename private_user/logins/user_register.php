@@ -13,11 +13,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         $id_number = $_POST['id_number'];
         $employee_number = $_POST['employee_number'];
         $email = $_POST['email'];
-        $hash_password = $_POST['passwordd'];
+        $password = $_POST['passwordd'];
         
-        if(!empty($email) && !empty($passwordd) && !is_numeric($email)){
+        if(!empty($email) && !empty($password) && !is_numeric($email)){
             $query = "insert into register(firstname, lastname, username, id_number, employee_number, email, passwordd) 
-            values('$firstname', '$lastname', '$'username', '$id_number', '$employee_number', '$email', '$passwordd')";
+            values('$firstname', '$lastname', '$username', '$id_number', '$employee_number', '$email', '$passwordd')";
 
             mysqli_query($conn, $query);
 
