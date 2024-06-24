@@ -1,3 +1,32 @@
+<script>
+
+const mysql = require('mysql2');
+
+const connection = mysql.createConnection({
+    host: 'localhost',    // host
+    user: 'root',         // database username
+    password: '',         // database password
+    database: 'bfms'      // database name
+});
+
+connection.connect(err => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the MySQL database.');
+});
+
+module.exports = connection;
+
+
+
+</script>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,10 +148,17 @@ img {
 button.btn.btn-primary {
     background-color: #007bff;
     border-color: #007bff;
+    border-radius: 2px;
     color: white;
     margin-left: 250px;
     width: 18%;
     height: 40px;
+ 
+   
+}
+button.btn.btn-primary a{
+    text-decoration: none;
+    color: white;
     font-size: large;
 }
 
@@ -197,7 +233,7 @@ button.btn.btn-danger:hover {
                 </div>
                 <div id="fileList" class="file-list"></div>
             </div>
-            <button type="submit" class="btn btn-primary">Upload</button>
+            <button type="submit" class="btn btn-primary"><a href="upload.php">Upload</a> </button>
         </form>
     </div>
         <script>
@@ -212,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let filesArray = [];
 
     // Load categories from local storage or use default categories
-    const defaultCategories = ["ICT", "Finance", "Economic&Planning"];
+    const defaultCategories = ["ICT", "Finance", "Economic Planning"];
     let categories = JSON.parse(localStorage.getItem('categories')) || defaultCategories;
 
     // Populate the category select element with categories
@@ -350,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData();
         const category = categorySelect.value;
-        filesArray.forEach(file => formData.append('files', file));
+        filesArray.forEach(file => formData.append('files[]', file));
 
         if (!category || filesArray.length === 0) {
             alert('Please select a category and choose files to upload.');
@@ -359,20 +395,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Add the selected category to the form data
         formData.append('category', category);
+
         // Use fetch to send the form data to the server
-        fetch('/upload', { // Adjust the endpoint URL as needed
+        fetch('/upload.php', { // Adjust the endpoint URL as needed
             method: 'POST',
             body: formData
         }).then(response => response.json())
           .then(data => {
               console.log(data);
               alert('Files uploaded successfully.');
+              // Optionally reset form or update UI after successful upload
+              filesArray = []; // Clear uploaded files
+              updateFileList(); // Update file list UI
           }).catch(error => {
               console.error(error);
               alert('Error uploading files.');
           });
     });
 });
+
 
         </script>
     

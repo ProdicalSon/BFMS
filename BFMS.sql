@@ -113,12 +113,14 @@ CREATE TABLE `login_user` (
 --
 
 CREATE TABLE `upload_files` (
-  `id_number` int(11) NOT NULL,
-  `NAME` varchar(200) NOT NULL,
-  `SIZE` varchar(200) NOT NULL,
-  `DOWNLOAD` varchar(200) NOT NULL,
-  `TIMERS` varchar(200) NOT NULL,
-  `ADMIN_STATUS` varchar(300) NOT NULL,
+  `ID_NUMBER` int(11) NOT NULL,
+  `F_NAME` varchar(200) NOT NULL,
+  `F_SIZE` varchar(200) NOT NULL,
+  `F_FORMAT` varchar(200) NOT NULL,
+  `DATE` varchar(200) NOT NULL,
+  `CATEGORY` varchar(300) NOT NULL,
+  `UPLOADER` varchar(300) NOT NULL,
+  `STATUS` varchar(300) NOT NULL,
   `EMAIL` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -126,7 +128,7 @@ CREATE TABLE `upload_files` (
 -- Dumping data for table `upload_files`
 --
 
-INSERT INTO `upload_files` (`id_number`, `NAME`, `SIZE`, `DOWNLOAD`, `TIMERS`, `ADMIN_STATUS`, `EMAIL`) VALUES
+INSERT INTO `upload_files` (`ID_NUMBER`, `F_NAME`, `F_SIZE`, `F_FORMAT`, `TIMERS`, `CATEGORY`, `EMAIL`) VALUES
 (
 
 );
