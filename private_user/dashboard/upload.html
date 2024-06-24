@@ -90,9 +90,9 @@ body{
                 <label for="categorySelect">Select Category:</label>
                 <select class="form-control" id="categorySelect" name="category" required>
                     <option value="" disabled selected>Select a category</option>
-                    <option value="category1">Category 1</option>
-                    <option value="category2">Category 2</option>
-                    <option value="category3">Category 3</option>
+                    <option value="category1">ICT</option>
+                    <option value="category2">Finance</option>
+                    <option value="category3">Economic&Planning</option>
                 </select>
             </div>
             <div class="form-group">
@@ -107,7 +107,7 @@ body{
             <div class="form-group">
                 <label for="fileUpload">Upload Files:</label>
                 <div id="dropZone" class="drop-zone">
-                    <p>Drag & Drop your files here or click to upload</p>
+                    <p>Drag & Drop your files here or click here to upload</p>
                     <input type="file" id="fileUpload" name="files" class="file-input" multiple>
                 </div>
                 <div id="fileList" class="file-list"></div>
@@ -125,6 +125,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const categorySelect = document.getElementById('categorySelect');
     const fileList = document.getElementById('fileList');
     let filesArray = [];
+
+    // Load categories from local storage or use default categories
+    const defaultCategories = ["Category 1", "Category 2", "Category 3"];
+    let categories = JSON.parse(localStorage.getItem('categories')) || defaultCategories;
+
+    // Populate the category select element with categories
+    function populateCategories() {
+        categorySelect.innerHTML = '<option value="" disabled selected>Select a category</option>';
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category.toLowerCase().replace(/ /g, '_');
+            option.textContent = category;
+            categorySelect.appendChild(option);
+        });
+    }
+
+    populateCategories();
 
     // Prevent default drag behaviors
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -231,15 +248,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add new category
     addCategoryBtn.addEventListener('click', () => {
         const newCategory = newCategoryInput.value.trim();
-        if (newCategory) {
-            const option = document.createElement('option');
-            option.value = newCategory.toLowerCase().replace(/ /g, '_');
-            option.textContent = newCategory;
-            categorySelect.appendChild(option);
-            categorySelect.value = option.value;
+        if (newCategory && !categories.includes(newCategory)) {
+            categories.push(newCategory);
+            localStorage.setItem('categories', JSON.stringify(categories));
+            populateCategories();
+            categorySelect.value = newCategory.toLowerCase().replace(/ /g, '_');
             newCategoryInput.value = '';
         } else {
-            alert('Please enter a category name.');
+            alert('Please enter a valid and unique category name.');
         }
     });
 
@@ -273,7 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
           });
     });
 });
-
 
         </script>
     
