@@ -89,7 +89,7 @@
                             <div class="menuOptionIcon">
                                 <div class="contents" id="c2">
                                     <p><section>Upload<p>You can also upload your files from here</p>
-                                    <button><a href="#">check it out</a></button></section></p>
+                                    <button><a href="uploadfiles.html">check it out</a></button></section></p>
                                 </div>
                             </div>
                             
