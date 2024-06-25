@@ -92,6 +92,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         }
         .register-form {
             /* background-color: red; */
+            overflow: auto;
             display: flex;
             flex-direction: column;
             max-width: 800px;         
@@ -130,6 +131,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             background-color: #007BFF;
             border: none;
             border-radius: 5px;
+            height: 20px;
             cursor: pointer;
         }
         .register-form button:hover {
