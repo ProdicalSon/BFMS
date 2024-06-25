@@ -1,0 +1,36 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+.skeleton{
+    border:1px solid green;
+    height:100vh;
+    width: 100vw;
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+
+}
+.upper{
+    border: 1px solid;
+    padding:10px;
+    min-height: 15vh;
+    display: flex;
+    flex-direction: row;
+}
+.lower{
+    min-height: 85vh;
+    border:1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.midContainer{
+    border:1px solid;
+    padding:10px;
+    border-radius: 5px;
+    min-width:60vh;
+    min-height:70vh;
+}

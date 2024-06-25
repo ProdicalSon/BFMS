@@ -236,5 +236,4 @@
     <script src="/includes/charts/charts.js"></script>
     <script src="/private_user/dashboard/viewfiles.js"></script>
 </body>
-
 </html>
