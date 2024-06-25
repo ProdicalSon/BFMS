@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,11 @@
         <div class="upper">
             <div class="back"><i class="material-icons">chevron_left</i></div>
             <div class="title"> <h1>Manage Your Files</h1></div>
-            <div class="greetings"><h2>Good morning User</h2></div>
+            <div class="greetings">
+                <h2>Good morning User</h2> 
+                <a href="user_login.html" style="margin-left: 120px;
+                text-decoration: none; color: white; font-size: 18px; font-weight: 700;">Logout</a>
+            </div>
             <div class="iconElements">
                 <div class="upper_notification ">
                     <i class="material-icons" style="font-size: 30px;">notifications</i>
@@ -75,7 +83,7 @@
                             <div class="menuOptionIcon">
                                 <div class="contents" id="c2">
                                     <p><section>Upload<p>You can also upload your files from here</p>
-                                    <button><a href="#">check it out</a></button></section></p>
+                                    <button><a href="upload.html">check it out</a></button></section></p>
                                 </div>
                             </div>
                             

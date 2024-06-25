@@ -27,19 +27,18 @@ SET time_zone = "+03:00";
 -- Table structure for table `admin_login`
 --
 
-CREATE TABLE `admin_login` (
-  `id_number` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `admin_user` text NOT NULL,
-  `admin_password` text NOT NULL,
-  `admin_status` varchar(50) NOT NULL
+CREATE TABLE `file_category` (
+  `category_id` int(11) NOT NULL,
+  `category_Name` text NOT NULL,
+  `category_description` text NOT NULL,
+  `color-label` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin_login`
 --
 
-INSERT INTO `admin_login` (`id_number`, `name`, `admin_user`, `admin_password`, `admin_status`) VALUES
+INSERT INTO `file_category` (`category_id`, `category_Name`, `category_description`, `label`) VALUES
 (
 
 );
@@ -65,7 +64,7 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`firstname`, `lastname`, `username`, `id_number`, `employ_number`, `email`, `passwordd`) VALUES
-('john', 'brian', 'johnbrian', '39694411', '11449', 'siundubrian65@gmail.com', 'Ruthsirengo123');
+('john', 'brian', 'johnbrian', '39694411', '11449', 'siundubrian65@gmail.com', 'ruthsirengo123');
 
 
 -- --------------------------------------------------------
@@ -114,12 +113,14 @@ CREATE TABLE `login_user` (
 --
 
 CREATE TABLE `upload_files` (
-  `id_number` int(11) NOT NULL,
-  `NAME` varchar(200) NOT NULL,
-  `SIZE` varchar(200) NOT NULL,
-  `DOWNLOAD` varchar(200) NOT NULL,
-  `TIMERS` varchar(200) NOT NULL,
-  `ADMIN_STATUS` varchar(300) NOT NULL,
+  `ID_NUMBER` int(11) NOT NULL,
+  `F_NAME` varchar(200) NOT NULL,
+  `F_SIZE` varchar(200) NOT NULL,
+  `F_FORMAT` varchar(200) NOT NULL,
+  `DATE` varchar(200) NOT NULL,
+  `CATEGORY` varchar(300) NOT NULL,
+  `UPLOADER` varchar(300) NOT NULL,
+  `STATUS` varchar(300) NOT NULL,
   `EMAIL` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -127,7 +128,7 @@ CREATE TABLE `upload_files` (
 -- Dumping data for table `upload_files`
 --
 
-INSERT INTO `upload_files` (`id_number`, `NAME`, `SIZE`, `DOWNLOAD`, `TIMERS`, `ADMIN_STATUS`, `EMAIL`) VALUES
+INSERT INTO `upload_files` (`ID_NUMBER`, `F_NAME`, `F_SIZE`, `F_FORMAT`, `TIMERS`, `CATEGORY`, `EMAIL`) VALUES
 (
 
 );
