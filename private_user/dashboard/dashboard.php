@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\layout\components.css">
     <link rel="stylesheet" href="dashComponents.css">
- 
+    <link rel="icon" href="../private_user\dashboard\dash_Images\bgm_county_logo.jpg">
     <link rel="stylesheet" href="..\layout\Layout.css">
+    <link rel="stylesheet" href="components.css">
     
     <!-- <link rel="stylesheet" href="Layout.css"> -->
     
@@ -19,6 +20,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="/includes/node_modules/chart.js/dist/chart.umd.js"></script>
 <title>Dashboard</title>
+
 </head>
 <body>
     <div class="skeleton">
@@ -102,8 +104,14 @@
                         <p>
                         Hello User <br>
                         Welcome To Bungoma File Management System. 
-                        Explore  the Options on the left  to get started
+                        Explore  the Options on the left  to get started. <br>
+                        Chat with other users on the system.
+                        <div class="chatApp">
+                        <button><a href="#">Click here to open ChatApp</a></button>
+                        </div>
+                        
                         </p>
+                        
                     </div>
                 </div>
                 <div class="r_mid">
