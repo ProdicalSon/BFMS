@@ -43,7 +43,7 @@
             <div class="left">
                 <div class="logo_left"><img src="..\layout\img\layout_img\bgm_county_logo-r.png" alt="logo_left" srcset="" style="height: 2cm; width: 2cm;"></div>
                 <section class="options"><div class="icon"><i class="material-icons">bar_chart</i></div><div class="optName"><a href="dashboard.php" style="text-decoration: none; color:white;">Dashboard</a></div></section>
-                <section class="options"><div class="icon"><i class="material-icons">folder_open</i></div><div class="optName"><a href="viewfile.php" style="text-decoration: none; color:white;"> Vew Files</a></div></section>
+                <section class="options"><div class="icon"><i class="material-icons">folder_open</i></div><div class="optName"><a href="viewfiles.php" style="text-decoration: none; color:white;"> Vew Files</a></div></section>
                 <section class="options"><div class="icon"><i class="material-icons">person</i></div><div class="optName"><a href="../settings/settings.html" style="text-decoration: none; color:white;">My Account</div></a></section>
                 <section class="options"><div class="icon"><i class="material-icons">cloud_upload</i></div><div class="optName"><a href="upload.html" style="text-decoration: none; color:white;">Upload</a></div></section>
                 <!-- <section class="options"><div class="icon"><i class="material-icons">settings</i></div><div class="optName">settings</div></section> -->
@@ -104,7 +104,7 @@
                         Explore  the Options on the left  to get started. <br>
                         Want to Chat with other users on the system.
                         <div class="chatApp">
-                        <button><a href="http://localhost/php-chat-app-main/index.php">Click here to open ChatApp</a></button>
+                        <button><a href="http://localhost/ChatApp/index.php">Click here to open ChatApp</a></button>
                         </div>
                         
                         </p>
