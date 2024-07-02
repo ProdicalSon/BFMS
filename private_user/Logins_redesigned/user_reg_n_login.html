@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="title">User Log in</title>
     <link rel="stylesheet" href="user_reg_n_login_stylesheet.css">
+    <style>
+       
+
+    </style>
 </head>
 <body>
 <div class="skeleton">
@@ -18,10 +22,92 @@
     </div>
     <div class="lower">
         <div class="midContainer">
-            <div class="login"></div>
-            <div class="signup"></div>
+            <div class="login">
+                <form action="#" class="loginform">
+                    <h2><u>Log In</u></h4>
+                    <div class="logo">
+                        
+                    </div>
+                    <div class="fields">
+                        <div class="errormsg">Any Error Message or prompt shall appear here</div>
+                        <label for="userName">User Name</label>
+                        <input type="text" name="userName" id="userName" placeholder="example user@bgm">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password"  placeholder="enter your password">
+                    </div>
+                   <button> Log in</button>
+                </form>
+                <div class="otheroptions">
+                    <p>Forgot Password? <a href="#" class="forgotPassword">Click here to reset</a></p>
+                    <form method="GET" class="resetpass">
+                        <input type="text" name="resetpassword" placeholder="Enter Your Email to recieve reset link">
+                    <button> submit email</button>
+                    </form>
+                    <p>Dont have an account ? <a href="#" class="Signupbtn">Click here to signup instead</a></p>
+
+                </div>
+                <!-- <button class="Signupbtn">Sign Up</button> -->
+            </div>
+            <div class="signup">
+                <form action="#"class="signupform">
+                    <div class="fields">
+                        <div class="errormsg">Any Error Message or prompt shall appear here</div>
+                        <label for="userName">First Name</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="Enter your first name">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Enter your last name">
+                        <label for="otherName">Other Name</label>
+                        <input type="text" name="otherName" id="otherName" placeholder="Enter any other name skip if none">
+                        <label for="employeeNumber">Employee Number</label>
+                        <input type="text" name="employeeNumber" id="employeeNumber" placeholder="if available enter your employee number">
+                        <label for="departmentDescription">Enter a brief desription of your department</label>
+                        <input type="text" name="departmentDescription" id="departmentDescription" placeholder="use about 100 characters only">
+                    <button class="askForToken" type="button">Submit and ask for token</button> 
+                    </div>
+                </form>
+                    <div class="container1">
+                        <div class="sub-container">
+                
+                            <form class="token-form">
+                                        <label for="token"><strong>Enter Token</strong>  </label><br>
+                                        <input type="text" id="digit1" class="token-input" maxlength="1" pattern="\d" required>
+                                        <input type="text" id="digit2" class="token-input" maxlength="1" pattern="\d" required>
+                                        <input type="text" id="digit3" class="token-input" maxlength="1" pattern="\d" required>
+                                        <input type="text" id="digit4" class="token-input" maxlength="1" pattern="\d" required>
+                                        <input type="text" id="digit5" class="token-input" maxlength="1" pattern="\d" required>
+                                        <input type="text" id="digit6" class="token-input" maxlength="1" pattern="\d" required><br>
+                                        <button type="button" class="validatebtn">Validate</button>
+                                    </form>
+                                   
+                        </div>
+                    
+                        <script>
+                            
+                        </script>
+                   
+                    </div>
+                
+                <form action="#"  class="finishUpRegistration">
+                    <div class="fields">
+                        <div class="errormsg">Any Error Message or prompt shall appear here</div>
+                        <label for="IdNo">Enter Id No</label>
+                        <input type="number" name="IdNo" id="IdNo" placeholder="Enter your National Identity Number ">
+                        <label for="User Name">Set Your User Name</label>
+                        <input type="text" name="UserName" id="UserName" placeholder="Set a User name for your account">
+                        <label for="SetPassword">Set Password</label>
+                        <input type="password" name="SetPassword" id="SetPassword" placeholder="Set A unique Password">
+                        <label for="ConfrmPassword">Confirm Your Password</label>
+                        <input type="password" name="ConfrmPassword" id="ConfirmPassword" placeholder="Repeat the password to be sure 😊 ">
+                       
+                            <button class="finishUp">Submit and Finish Up</button> 
+                            
+                    </div>
+                </form>
+                <button class="Loginbtn">Back To log In</button>
+            </div>
         </div>
     </div>
 </div>
+<script src="Login_Signup.js"></script>
 </body>
 </html>
