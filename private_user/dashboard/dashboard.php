@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\layout\components.css">
     <link rel="stylesheet" href="dashComponents.css">
- 
+    <link rel="icon" href="private_user\dashboard\dash_Images\bgm_county_logo.jpg">
     <link rel="stylesheet" href="..\layout\Layout.css">
+    <link rel="stylesheet" href="components.css">
     
     <!-- <link rel="stylesheet" href="Layout.css"> -->
     
@@ -19,6 +17,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="/includes/node_modules/chart.js/dist/chart.umd.js"></script>
 <title>Dashboard</title>
+
 </head>
 <body>
     <div class="skeleton">
@@ -35,7 +34,7 @@
                     <i class="material-icons" style="font-size: 30px;">notifications</i>
                 </div>
                 <div class="upper_profile">
-                    <i class="material-icons" style="font-size: 30px;">person</i>
+                    <i class="material-icons" style="font-size: 30px;">person</i> 
                 </div>
                 
             </div>
@@ -43,10 +42,10 @@
         <div class="lower">
             <div class="left">
                 <div class="logo_left"><img src="..\layout\img\layout_img\bgm_county_logo-r.png" alt="logo_left" srcset="" style="height: 2cm; width: 2cm;"></div>
-                <section class="options"><div class="icon"><i class="material-icons">bar_chart</i></div><div class="optName">Statistics</div></section>
-                <section class="options"><div class="icon"><i class="material-icons">folder_open</i></div><div class="optName">Vew Files</div></section>
+                <section class="options"><div class="icon"><i class="material-icons">bar_chart</i></div><div class="optName"><a href="dashboard.php" style="text-decoration: none; color:white;">Dashboard</a></div></section>
+                <section class="options"><div class="icon"><i class="material-icons">folder_open</i></div><div class="optName"><a href="viewfile.php" style="text-decoration: none; color:white;"> Vew Files</a></div></section>
                 <section class="options"><div class="icon"><i class="material-icons">person</i></div><div class="optName"><a href="../settings/settings.html" style="text-decoration: none; color:white;">My Account</div></a></section>
-                <section class="options"><div class="icon"><i class="material-icons">cloud_upload</i></div><div class="optName">Upload</div></section>
+                <section class="options"><div class="icon"><i class="material-icons">cloud_upload</i></div><div class="optName"><a href="upload.html" style="text-decoration: none; color:white;">Upload</a></div></section>
                 <!-- <section class="options"><div class="icon"><i class="material-icons">settings</i></div><div class="optName">settings</div></section> -->
                 <div class="userProfile">
                     <div class="account">
@@ -65,7 +64,7 @@
                             <div class="menuOptionIcon">
                                 <div class="contents" id="c2">
                                     <p><section> View<p>Get to view all of Your files here</p>
-                                    <button><a href="products.html#cap">check it out</a></button></section></p>
+                                    <button><a href="viewfile.php">check it out</a></button></section></p>
                                 </div>
                             </div>
                             <!-- <div class="menuOptionName"><p>view</p></div> -->
@@ -74,7 +73,7 @@
                             <div class="menuOptionIcon">
                                 <div class="contents" id="c2">
                                     <p><section> Account<p>Modify your account details to suit you😊</p>
-                                    <button><a href="products.html#cap">check it out</a></button></section></p>
+                                    <button><a href="../settings/settings.html">check it out</a></button></section></p>
                                 </div>
                             </div>
                             
@@ -102,8 +101,14 @@
                         <p>
                         Hello User <br>
                         Welcome To Bungoma File Management System. 
-                        Explore  the Options on the left  to get started
+                        Explore  the Options on the left  to get started. <br>
+                        Want to Chat with other users on the system.
+                        <div class="chatApp">
+                        <button><a href="http://localhost/php-chat-app-main/index.php">Click here to open ChatApp</a></button>
+                        </div>
+                        
                         </p>
+                        
                     </div>
                 </div>
                 <div class="r_mid">

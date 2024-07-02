@@ -112,23 +112,23 @@ CREATE TABLE `login_user` (
 -- Table structure for table `upload_files`
 --
 
-CREATE TABLE `upload_files` (
-  `ID_NUMBER` int(11) NOT NULL,
-  `F_NAME` varchar(200) NOT NULL,
-  `F_SIZE` varchar(200) NOT NULL,
-  `F_FORMAT` varchar(200) NOT NULL,
-  `DATE` varchar(200) NOT NULL,
-  `CATEGORY` varchar(300) NOT NULL,
-  `UPLOADER` varchar(300) NOT NULL,
-  `STATUS` varchar(300) NOT NULL,
-  `EMAIL` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE files (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    filename VARCHAR(255) NOT NULL,
+    originalname VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    path VARCHAR(255) NOT NULL,
+    mimetype VARCHAR(255) NOT NULL,
+    size INT NOT NULL,
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 
 --
--- Dumping data for table `upload_files`
+-- Dumping data for table `files`
 --
 
-INSERT INTO `upload_files` (`ID_NUMBER`, `F_NAME`, `F_SIZE`, `F_FORMAT`, `TIMERS`, `CATEGORY`, `EMAIL`) VALUES
+INSERT INTO `files` (`id`, `filename`, `originalname`, `CATEGORY`, `path`, 'mimetype', `size`, 'uploaded_at') VALUES
 (
 
 );
@@ -152,8 +152,8 @@ ALTER TABLE `login_user`
 --
 -- Indexes for table `upload_files`
 --
-ALTER TABLE `upload_files`
-  ADD PRIMARY KEY (`id_number`);
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -174,8 +174,8 @@ ALTER TABLE `login_user`
 --
 -- AUTO_INCREMENT for table `upload_files`
 --
-ALTER TABLE `upload_files`
-  MODIFY `id_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

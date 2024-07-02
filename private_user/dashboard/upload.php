@@ -1,40 +1,59 @@
 <?php
-session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bfms";
 
-include('db.php');
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Handle file uploads
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["files"])) {
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $category = $_POST['category'];
-    $uploader_user_id = 1; // Replace with actual user ID
+    $targetDir = "uploads/";
 
-    // Loop through uploaded files
-    foreach ($_FILES["files"]["error"] as $key => $error) {
-        if ($error == UPLOAD_ERR_OK) {
-            $tmp_name = $_FILES["files"]["tmp_name"][$key];
-            $name = basename($_FILES["files"]["name"][$key]);
-            $size = $_FILES["files"]["size"][$key];
-            $type = mime_content_type($tmp_name); // Get MIME type
+    if (!file_exists($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
 
-            // Insert into database
-            $sql = "INSERT INTO files_upload (file_name, file_type, file_format, file_size, file_category_id, uploader_user_id, date_of_upload)
-                    VALUES (?, ?, ?, ?, ?, ?, NOW())";
-            $stmt = $conn->prepare($sql);
-            $null = NULL;
-            $stmt->bind_param("sssdii", $name, $type, pathinfo($name, PATHINFO_EXTENSION), $size, $category, $uploader_user_id);
-            $stmt->send_long_data(0, file_get_contents($tmp_name));
-            $stmt->execute();
-            $stmt->close();
+    $fileData = [];
+
+    foreach ($_FILES['files']['tmp_name'] as $key => $tmp_name) {
+        $fileName = basename($_FILES['files']['name'][$key]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+        $fileSize = $_FILES['files']['size'][$key];
+
+        if (move_uploaded_file($tmp_name, $targetFilePath)) {
+            $fileData[] = [
+                'filename' => $fileName,
+                'originalname' => $fileName,
+                'category' => $category,
+                'path' => $targetFilePath,
+                'mimetype' => $fileType,
+                'size' => $fileSize
+            ];
         }
     }
 
-    // Send response
-    echo json_encode(['status' => 'success']);
-    exit;
+    if (!empty($fileData)) {
+        $stmt = $conn->prepare("INSERT INTO files (filename, originalname, category, path, mimetype, size) VALUES (?, ?, ?, ?, ?, ?)");
+
+        foreach ($fileData as $file) {
+            $stmt->bind_param("sssssi", $file['filename'], $file['originalname'], $file['category'], $file['path'], $file['mimetype'], $file['size']);
+            $stmt->execute();
+        }
+
+        $stmt->close();
+        echo json_encode(['message' => 'Files uploaded successfully.', 'data' => $fileData]);
+    } else {
+        echo json_encode(['message' => 'File upload failed, please try again.']);
+    }
 }
 
-// Handle other cases (e.g., invalid requests)
-http_response_code(400);
-echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
-exit;
+$conn->close();
 ?>
