@@ -10,6 +10,7 @@ body{
 }
 .skeleton{
     /* border:1px solid green; */
+    background: url("/private_user/layout/img/background/Gradients/Grey2.jpg");
     min-height:100vh;
     width: 100vw;
     /* padding: 10px; */
@@ -77,12 +78,13 @@ body{
    
 }
 .logo{
-    /* border:1px solid rgb(0, 128, 122); */
+    border:1px solid rgb(85, 2, 53);
     border-radius: 10px;
-    width:3.5cm;
+    width:3cm;
     min-height:2.8cm;
-    background: url("/private_user/dashboard/download.jpeg");
-    background-size: cover;
+    background: url("/private_user/layout/img/layout_img/bgm_county_logo-r.png");
+    background-size:contain;
+    background-repeat: no-repeat;
 }
 
 .fields{
